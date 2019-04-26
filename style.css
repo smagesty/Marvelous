@@ -1,0 +1,7 @@
+body {
+    background-image: url("./assets/images/marvel-logo.jpg");   
+    background-repeat: repeat; 
+};
+.carousel-item {
+    width: 250px;
+};
