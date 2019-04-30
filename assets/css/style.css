@@ -64,6 +64,18 @@ label{
     background-color: #b11414;
     color: white;
 }
+
+.col-sm-3 {
+    background-color: black;
+    opacity: 0.8;
+    padding: 5px;
+    text-align: center;
+    margin: 10px;
+    font-size: 15px;
+    z-index: 80;
+    color:white;
+    overflow: auto;
+};
 .music {
     float: right;
     margin-top: 250px;
