@@ -66,11 +66,11 @@ $("#search").on("click", function (event) {
       for (var i = 0; i < movieMax; i++) {
         var movieInfo = response.Search[i];
         console.log(movieInfo);
-        movieCount = i+1;
+        movieCount = i + 1;
         var $movieDiv = $("<div>");
         $movieDiv.addClass("col-sm-3");
-         $("#searchdump").append($movieDiv);
-        var $movieList = $("<div class='col-sm-3'>");
+        $("#searchdump").append($movieDiv);
+        // var $movieList = $("<div class='col-sm-3'>");
         var title = $("<h2>").html(response.Search[i].Title);
         var released = $("<h4>").html(response.Search[i].Year);
         var Image = $("<img>").attr("src", response.Search[i].Poster);
@@ -80,4 +80,4 @@ $("#search").on("click", function (event) {
         $("#searchdump").append($movieDiv);
       };
     });
-  })
+})
