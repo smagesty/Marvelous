@@ -22,7 +22,8 @@ $("#search").on("click", function (event) {
     // var marvelDiv = $("<div>");
     // var marvelImage = $("<img>");
 
-    var marvelUrl = $("<a>").attr("href", data.data.results[0].urls[0].url).text("Click for comic info");
+    var marvelUrl = $("<a>").attr("href", data.data.results[0].urls[0].url).attr('target','_blank').text("Click for comic info");
+  
     // window.open(marvelUrl, '_blank');
     // marvelDiv.append(marvelImage);
     // marvelImage.attr("src", data.data.results[0].thumbnail.path + '/landscape_large.jpg');
@@ -49,7 +50,7 @@ $("#search").on("click", function (event) {
   // event.preventDefault() can be used to prevent an event's default behavior.
   // Here, it prevents the submit button from trying to submit a form when clicked
   event.preventDefault();
-
+  $("#searchdump").empty();
   // Here we grab the text from the input box
   var movie = $("#search-term").val();
 
@@ -61,23 +62,29 @@ $("#search").on("click", function (event) {
     url: queryURL,
     method: "GET"
   }).
-    then(function (response) {
-      var movieMax = 6
-      for (var i = 0; i < movieMax; i++) {
-        var movieInfo = response.Search[i];
-        console.log(movieInfo);
-        movieCount = i+1;
-        var $movieDiv = $("<div>");
-        $movieDiv.addClass("col-sm-3");
-         $("#searchdump").append($movieDiv);
-        var $movieList = $("<div class='col-sm-3'>");
-        var title = $("<h2>").html(response.Search[i].Title);
-        var released = $("<h4>").html(response.Search[i].Year);
-        var Image = $("<img>").attr("src", response.Search[i].Poster);
-        $movieDiv.append(title);
-        $movieDiv.append(released);
-        $movieDiv.append(Image);
-        $("#searchdump").append($movieDiv);
-      };
-    });
-  })
+  then(function (response) {
+    var movieMax = 6
+    for (var i = 0; i < movieMax; i++) {
+      var movieInfo = response.Search[i];
+      console.log(movieInfo);
+      movieCount = i + 1;
+      var $movieDiv = $("<div>");
+      $movieDiv.addClass("col-sm-3");
+      $("#searchdump").append($movieDiv);
+      var $movieList = $("<div class='col-sm-3'>");
+      var title = $("<h2>").html(response.Search[i].Title);
+      var released = $("<h4>").html(response.Search[i].Year);
+      var Image = $("<img>").attr("src", response.Search[i].Poster);
+      $movieDiv.append(title);
+      $movieDiv.append(released);
+      $movieDiv.append(Image);
+      $("#searchdump").append($movieDiv);
+      
+    };
+  });
+})
+
+// modal link function
+$('#modalFind').click(function(){
+  location.href='https://www.fandango.com/avengers-endgame-2019-215871/movie-times';
+})
