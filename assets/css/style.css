@@ -62,9 +62,14 @@ label{
     padding: 5px;
     text-align: center;
     margin: 10px;
+    margin-left: 65px;
     font-size: 15px;
     z-index: 80;
     color:white;
+    overflow: hidden;
+    display: inline-block;
+
+
 };
 .music {
     float: right;

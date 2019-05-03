@@ -151,10 +151,8 @@
                         placeholder="Search your favorite super hero!" value="" required>
                 </div>
                 <!-- search buttons -->
-                <button class="btnstyle" class="btn btn-default" id="search">
+                <button class="btnstyle" class="btn btn-default" id="search" data-toggle="modal" data-target="#searchModal">
                     Search</button>
-                <button class="btnstyle" class="btn btn-default" id="clear">
-                    Clear Results</button>
             </div>
         </div>
 
@@ -174,16 +172,15 @@
 
 
         <div class="container-fluid">
-            <div class="row d-inline-flex">
-                <div class="col-sm-2">
+            <!-- <div class="row d-inline-flex">
                     <div class="container" id="sidebar">
 
 
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-sm-10" id="maincontent">
-                    <div class="row d-flex justify-content-center" id="gridContainer">
+                <!-- <div class="col-sm-10" id="maincontent">
+                    <div class="row d-flex justify-content-center" id="gridContainer"> -->
                         <div id="searchdump"></div>
                         <!-- <div class="col-sm-3" id="searchdump">1</div>
                         <div class="col-sm-3" id="searchdump">2</div>
@@ -199,20 +196,37 @@
             </div>
 
         </div>
-        <div class="container-fluid" id="articleDisplay">
-            <div class="row" id="articleContainer">
-                <div class="col-sm-12"></div>
-            </div>
-            <div class="row" id="charityHolder">
-                <div class="col-sm-6"></div>
-            </div>
 
-
+<!-- Modal -->
+<div class="modal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="searchModalLabel">Avengers: Endgame in Theaters Now!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+                 Search Dates and Times 
+        </div>
+        <div class="modal-footer">
+             <button type="button" class="btn btn-primary" id="modalFind">Find in a theater near you!</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+        </div>
+    </div>
+</div>
+</div>
+Collapse
             <!-- Music will go underneath -->
             <element class="music">
 
                 <audio controls loop>
-                    <source src="./assets/images/avengers.mp3" type="audio/mp3" />
+
+                    <source src="./assets/audio/avengers.mp3" type="audio/mp3" />  
+
                 </audio>
             </element>
             <script src="assets/javascript/javatest2-3.js" type="text/javascript"></script>
