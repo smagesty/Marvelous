@@ -62,6 +62,7 @@ $("#search").on("click", function (event) {
     url: queryURL,
     method: "GET"
   }).
+
   then(function (response) {
     var movieMax = 6
     for (var i = 0; i < movieMax; i++) {
@@ -87,4 +88,25 @@ $("#search").on("click", function (event) {
 // modal link function
 $('#modalFind').click(function(){
   location.href='https://www.fandango.com/avengers-endgame-2019-215871/movie-times';
+
+    then(function (response) {
+      var movieMax = 6
+      for (var i = 0; i < movieMax; i++) {
+        var movieInfo = response.Search[i];
+        console.log(movieInfo);
+        movieCount = i + 1;
+        var $movieDiv = $("<div>");
+        $movieDiv.addClass("col-sm-3");
+        $("#searchdump").append($movieDiv);
+        // var $movieList = $("<div class='col-sm-3'>");
+        var title = $("<h2>").html(response.Search[i].Title);
+        var released = $("<h4>").html(response.Search[i].Year);
+        var Image = $("<img>").attr("src", response.Search[i].Poster);
+        $movieDiv.append(title);
+        $movieDiv.append(released);
+        $movieDiv.append(Image);
+        $("#searchdump").append($movieDiv);
+      };
+    });
+
 })
