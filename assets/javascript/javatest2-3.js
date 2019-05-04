@@ -13,29 +13,15 @@ $("#search").on("click", function (event) {
   }).then(function (data) {
 
     var marvelName = $("<h2>").html(data.data.results[0].name);
-    // $(".card-title").html(marvelName);
-    // $("#marvelinfo").append("<h2>" + marvelName + "</h2>");
     var marvelImage = $("<img>").attr("src", data.data.results[0].thumbnail.path + '/landscape_large.jpg');
     var marvelDes = $("<h4>").html(data.data.results[0].description);
-    // $(".card-text").html(marvelDes);
-
-    // var marvelDiv = $("<div>");
-    // var marvelImage = $("<img>");
-
     var marvelUrl = $("<a>").attr("href", data.data.results[0].urls[0].url).attr('target','_blank').text("Click for comic info");
-  
-    // window.open(marvelUrl, '_blank');
-    // marvelDiv.append(marvelImage);
-    // marvelImage.attr("src", data.data.results[0].thumbnail.path + '/landscape_large.jpg');
-    // $("#images").append(marvelDiv);
+
 
     $("#marvelInfo").empty();
     $("#marvelInfo").append(marvelName, marvelDes, marvelUrl);
     $("#marvelInfo").prepend(marvelImage);
-    // var marvelComic = data.data.results[0].comics;
 
-
-    // $(".card-text2").html(marvelComic);
 
 
     // Printing the entire object to console
